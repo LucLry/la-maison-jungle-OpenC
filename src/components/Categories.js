@@ -1,11 +1,13 @@
+import "../styles/Categories.css";
 import { plantList } from "../datas/plantList";
 
 const Categories = ({ setPlantListFiltered }) => {
   const categoriesList = [...new Set(plantList.map((e) => e.category))];
   return (
-    <div>
+    <div className="lmj-categories">
       <select
         id="categorieSelect"
+        className="lmj-categories-select"
         onChange={(e) => {
           if (e.target.value === "") {
             setPlantListFiltered([...plantList]);
